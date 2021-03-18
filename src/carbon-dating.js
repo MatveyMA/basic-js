@@ -6,7 +6,7 @@ const HALF_LIFE_PERIOD= 5730;
 module.exports = function dateSample(sampleActivity) {
 let age = 0;
 let k = 0.693/HALF_LIFE_PERIOD;
-if(isNaN(sampleActivity) || typeof sampleActivity !== 'string' || parseInt(sampleActivity)<=0)
+if(isNaN(sampleActivity) || typeof sampleActivity !== 'string' || parseInt(sampleActivity)<=0 || typeof sampleActivity == 'undefined')
 return false;
 else if(typeof sampleActivity == 'string' && parseInt(sampleActivity)>0)
 age = Math.log(MODERN_ACTIVITY/Number(sampleActivity))/k;
